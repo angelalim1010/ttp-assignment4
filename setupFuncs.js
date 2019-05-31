@@ -3,9 +3,6 @@ let rowNum = 1;
 let colNum = 1;
 //alert(colNum);
 let currentColor = "white";
-alert(currentColor);
-
-document.getElementById("testPixel").style.background = currentColor;
 
 document.getElementById("addRow").addEventListener("click", function(event) {
 		rowNum += 1;
@@ -27,31 +24,23 @@ document.getElementById("subCol").addEventListener("click", function(event) {
 });
 
 
-document.getElementById("choseRed").addEventListener("click", function(event) {
-	currentColor = "red";
-	alert(currentColor);
+document.getElementById("selectColor").addEventListener("change", function(event) {
+	if (document.getElementById("selectColor").value === "WHITE") {
+		currentColor = "white";
+	}
+	else if (document.getElementById("selectColor").value === "RED") {
+		currentColor = "red";
+	}
+	else if (document.getElementById("selectColor").value === "BLUE") {
+		currentColor = "blue";
+	}
+	else if (document.getElementById("selectColor").value === "GREEN") {
+		currentColor = "green";
+	}
+	else if (document.getElementById("selectColor").value === "YELLOW") {
+		currentColor = "yellow";
+	}
 });
-
-document.getElementById("choseBlue").addEventListener("click", function(event) {
-	currentColor = "blue";
-	alert(currentColor);
-});
-
-document.getElementById("choseGreen").addEventListener("click", function(event) {
-	currentColor = "green";
-	alert(currentColor);
-});
-
-document.getElementById("choseYellow").addEventListener("click", function(event) {
-	currentColor = "yellow";
-	alert(currentColor);
-});
-
-document.getElementById("choseWhite").addEventListener("click", function(event) {
-	currentColor = "white";
-	alert(currentColor);
-});
-
 
 
 document.getElementById("testPixel").addEventListener("click", function(event) {
