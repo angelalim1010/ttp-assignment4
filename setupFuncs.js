@@ -62,6 +62,9 @@ document.getElementById("clearAll").addEventListener("click", function(event) {
 	document.getElementById("testPixel").style.background = "white";
 });
 
+document.getElementById("clickHold").addEventListener("click", function(event) {
+});
+
 
 
 
