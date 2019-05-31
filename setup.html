@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<title>PIXELATE</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="setupStyle.css">
+
+<h1>Pixelate</h1>
+<div id="pixelSelector">
+	<p> ROWS:
+		<button id="addRow"> + </button>
+		<button id="subRow"> - </button>
+	</p> 
+
+	<p> COLS:
+		<button id="addCol"> + </button>
+		<button id="subCol"> - </button>
+	</p>
+
+	<p> COLOR: 
+		<select>WHITE
+		  <option id="choseWhite" value="WHITE">WHITE</option>			
+		  <option id="choseRed" value="RED">RED</option>
+		  <option id="choseGreen" value="GREEN">GREEN</option>
+		  <option id="choseBlue" value="BLUE">BLUE</option>
+		  <option id="choseYellow" value="YELLOW">YELLOW</option>
+		</select>
+	</p>
+
+</div>
+
+
+<div id="testPixel" style= "width:100px; height:100px; border:1px solid #000000">
+</div>
+
+
+
+<div id="funcSelector">
+	<button id="fillAllUncolored">Fill all uncolored</button>
+	<button id="fillAll">Fill all</button>
+	<button id="clearAll">Clear all</button>
+</div>
+
+
+
+
+<script src="setupFuncs.js"></script>
+
+
+</body>
+</html>
