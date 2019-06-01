@@ -4,12 +4,14 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div>
     <h1>Pixelate</h1>
     <table id="myTable">
-        <tr>
-            <td id="testPixel"></td>
+        <tr bgcolor="#FF0000" >
+            <td id="testPixel" onClick="setColor(this)"></td>
         </tr>
     </table>
+    </div>
 <br>
 <button onclick="addRow()">Add</button>
 <button onclick="deleteRow()">Delete</button>
