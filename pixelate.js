@@ -1,21 +1,11 @@
-function createCell(cell, style) {
-    let div = document.createElement('div') // create DIV element
-    //div.setAttribute('class', style);        // set DIV class attribute
-    //div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
-    cell.appendChild(div);                   // append DIV to the table cell
-}
-
 function addRow() {
-    let tbl = document.getElementById('myTable'), // table reference
-          row = tbl.insertRow(tbl.rows.length),      // append table row
-          i;
-      // if(tbl.rows.length > 12){
-      //     return;
-      // }
-      // insert table cells to the new row
-      for (i = 0; i < tbl.rows[0].cells.length; i++) {
-              createCell(row.insertCell(i), 'row');
-      }
+    let tbl = document.getElementById('myTable') // table reference
+    let rows = Array.from(document.getElementsByTagName("tr"));
+    let newRow = document.createElement("tr");
+      for(let i =0; i < rows[0].childElementCount; i++){
+        newRow.appendChild(document.createElement("td"));
+    }
+    tbl.appendChild(newRow);
       console.log("row created" + document.getElementById("testPixel"));
 
   }
@@ -25,15 +15,11 @@ function deleteRow(){
 }
 
 function addColumn(){
-    // append column to the HTML table
-    let tbl = document.getElementById('myTable'), // table reference
-        i;
-
-    // open loop for each row and append cell
-        for (i = 0; i < tbl.rows.length; i++) {
-            createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), 'col');
-            console.log("column made" + document.getElementById("testPixel"));
-        }
+    let rows = document.getElementsByTagName('tr');
+   for(let row of rows){
+       let newCol = document.createElement("td");
+       row.appendChild(newCol);
+   }
 }
 
 function deleteColumn(){
@@ -46,9 +32,4 @@ function deleteColumn(){
    return;
   }
  }
-}
-function setColor(){
-
-        document.getElementByTag("div").style.background="black";
-
 }
