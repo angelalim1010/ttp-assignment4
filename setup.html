@@ -21,7 +21,7 @@
 	</p>
 
 	<p> COLOR: 
-		<select id="selectColor">
+		<select id="selectColor" onchange="changeCurrentColor()">
 		  <option value="WHITE">WHITE</option>			
 		  <option value="RED">RED</option>
 		  <option value="GREEN">GREEN</option>
@@ -36,17 +36,16 @@
 
 <table id="myTable">
 	<tr>
-		<td id="myRow"></td>
+		<td id="myRow"></td>	
 	</tr>
 </table>
 
 
 
 <div id="funcSelector">
-	<button id="fillAllUncolored">Fill all uncolored</button>
-	<button id="fillAll">Fill all</button>
-	<button id="clearAll">Clear all</button>
-	<button id="clickHold">Click and hold</button>	
+	<button id="fillAllUncolored" onclick="fillAllUncolored()">Fill all uncolored</button>
+	<button id="fillAll" onclick="fillAll()">Fill all</button>
+	<button id="clearAll" onclick="clearAll()">Clear all</button>
 </div>
 
 
