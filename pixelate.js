@@ -3,6 +3,7 @@ function createCell(cell, style) {
     div.setAttribute('class', style);        // set DIV class attribute
     div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
     cell.appendChild(div);                   // append DIV to the table cell
+    div.id = "testPixel";
 }
 
 function addRow() {
@@ -13,6 +14,7 @@ function addRow() {
       for (i = 0; i < tbl.rows[0].cells.length; i++) {
           createCell(row.insertCell(i), 'row');
       }
+      console.log(document.getElementById("testPixel"));
 }
 
 function deleteRow(){
