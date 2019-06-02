@@ -138,7 +138,7 @@ function fillAllUncolored() {
     //for each column
     let cols = row.getElementsByTagName("td");
     for(let i = 0; i < cols.length; i++) {
-      if (cols[i].style.background === "white") {
+      if (cols[i].style.background == "" || cols[i].style.background == "white") {
         cols[i].style.background = currentColor;
       }
     }
