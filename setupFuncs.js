@@ -4,6 +4,7 @@ let currentColor = "white";
 function addRow() {
   let tbl = document.getElementById('myTable');
   let rows = Array.from(document.getElementsByTagName("tr"));
+  console.log(rows)
 
   //check for border
   let numRows = tbl.rows.length;
@@ -11,6 +12,8 @@ function addRow() {
     let newRow = document.createElement("tr");
       for(let i =0; i < rows[0].childElementCount; i++){
         newRow.appendChild(document.createElement("td"));
+        newRow.style.background=currentColor;
+        console.log(newRow);
       }
       tbl.appendChild(newRow);
   }
@@ -39,7 +42,7 @@ function addColumn(){
     let rows = document.getElementsByTagName('tr');
     //for each row
     for(let row of rows){
-      //create a newCol 
+      //create a newCol
       let newCol = document.createElement("td");
       row.appendChild(newCol);
     }
