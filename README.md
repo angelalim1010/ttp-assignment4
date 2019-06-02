@@ -1,2 +1,4 @@
 # ttp-assignment4
-Pixelate assignment 
+Pixelate assignment
+
+Partners: Mary Fan and Angela Lim
