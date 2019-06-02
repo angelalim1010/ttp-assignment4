@@ -1,44 +1,69 @@
-function createCell(cell, style) {
-    let div = document.createElement('div') // create DIV element
-    div.setAttribute('class', style);        // set DIV class attribute
-    div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
-    cell.appendChild(div);                   // append DIV to the table cell
-    div.id = "testPixel";
-}
-
 function addRow() {
-    let tbl = document.getElementById('myTable'), // table reference
-          row = tbl.insertRow(tbl.rows.length),      // append table row
-          i;
-      // insert table cells to the new row
-      for (i = 0; i < tbl.rows[0].cells.length; i++) {
-          createCell(row.insertCell(i), 'row');
-      }
-      console.log(document.getElementById("testPixel"));
-}
+    let tbl = document.getElementById('myTable') // table reference
+    let rows = Array.from(document.getElementsByTagName("tr"));
+    let newRow = document.createElement("tr");
+      for(let i =0; i < rows[0].childElementCount; i++){
+        newRow.appendChild(document.createElement("td"));
+    }
+    tbl.appendChild(newRow);
+      console.log("row created" + document.getElementById("testPixel"));
+
+  }
 
 function deleteRow(){
     document.getElementById("myTable").deleteRow(1);
 }
 
 function addColumn(){
-    // append column to the HTML table
-    let tbl = document.getElementById('myTable'), // table reference
-        i;
-    // open loop for each row and append cell
-    for (i = 0; i < tbl.rows.length; i++) {
-        createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, 'col');
-    }
+    let rows = document.getElementsByTagName('tr');
+   for(let row of rows){
+       let newCol = document.createElement("td");
+       row.appendChild(newCol);
+   }
 }
 
 function deleteColumn(){
     let allRows = document.getElementById('myTable').rows;
- for (let i=0; i< allRows.length; i++) {
-  if (allRows[i].cells.length > 1) {
-   allRows[i].deleteCell(-1); //delete the cell
-  } else {
-   console.log("You can't delete more columns.");
-   return;
-  }
- }
+     for (let i=0; i< allRows.length; i++) {
+          if (allRows[i].cells.length > 1) {
+              allRows[i].deleteCell(-1); //delete the cell
+         }
+         else {
+              console.log("You can't delete more columns.");
+           return;
+         }
+    }
 }
+
+function setColor(obj,color){
+    obj.style.backgroundColor = color;
+}
+
+function changeColor(){
+    let isDrawing = false;
+    const cells = document.getElementsByTagName("td");
+    for(let cell of cells){
+
+    cell.addEventListener('mousedown',event => {
+        isDrawing = true;
+        console.log(cell);
+        console.log(cells.length);
+        setColor(cell,"Purple");
+    });
+
+    cell.addEventListener('mousemove',event => {
+        if(isDrawing){
+            setColor(cell,"Purple");
+        }
+    });
+
+    cell.addEventListener('mouseup',event => {
+        if(isDrawing){
+            isDrawing = false;
+        }
+    });
+}
+
+}
+
+changeColor();
