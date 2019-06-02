@@ -1,5 +1,5 @@
 //initialize currentColor
-let currentColor = "white";
+let currentColor = "none";
 
 function addRow() {
   let tbl = document.getElementById('myTable');
@@ -110,7 +110,7 @@ document.getElementById("myTable").addEventListener("mouseup", function(event) {
 //change currentColor when a different color is selected using colorSelector
 function changeCurrentColor() {
   if (document.getElementById("selectColor").value === "WHITE") {
-    currentColor = "white";
+    currentColor = "none";
   }
   else if (document.getElementById("selectColor").value === "RED") {
     currentColor = "red";
@@ -135,7 +135,7 @@ function fillAllUncolored() {
     //for each column
     let cols = row.getElementsByTagName("td");
     for(let i = 0; i < cols.length; i++) {
-      if (cols[i].style.background === "white") {
+      if (cols[i].style.background === "none") {
         cols[i].style.background = currentColor;
       }
     }
@@ -165,7 +165,7 @@ function clearAll() {
     //for each column
     let cols = row.getElementsByTagName("td");
     for(let i = 0; i < cols.length; i++) {
-      cols[i].style.background = "white";
+      cols[i].style.background = "none";
     }
   }
 }
